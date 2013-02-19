@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>タイトルを指定しなくてもURLのtitle部分を適当に生成してくれるようにRakefileを変更 - My Octopress Blog</title>
+  <meta name="author" content="Your Name">
+
+  
+  <meta name="description" content="Rakefile中のnew_post taskでデフォルトのtitleを設定している箇所を 1
+2
+# args.with_defaults(:title =&gt; &#39;new-post&#39;)
+args.with_defaults(:title =&gt; Digest::SHA1. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://lassie116.github.com/test/blog/2012/06/09/f0710d21/">
+  <link href="/test/favicon.png" rel="icon">
+  <link href="/test/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/test/javascripts/modernizr-2.0.js"></script>
+  <script src="/test/javascripts/ender.js"></script>
+  <script src="/test/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/test/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
+  <!-- font-family: 'Knewave', cursive; -->
+<link href='http://fonts.googleapis.com/css?family=Knewave' rel='stylesheet' type='text/css'>
+<!-- font-family: 'Cantata One', serif; -->
+<link href='http://fonts.googleapis.com/css?family=Cantata+One' rel='stylesheet' type='text/css'>
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1>
+      <a href="/test/">My Octopress Blog</a>
+      
+        <span>A blogging framework for hackers.</span>
+      
+  </h1>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/test/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:lassie116.github.com/test" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/test/">Home</a></li>
+  <li><a href="/test/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">タイトルを指定しなくてもURLのtitle部分を適当に生成してくれるようにRakefileを変更</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-09T17:35:00+09:00" pubdate data-updated="true">Jun 9<span>th</span>, 2012</time>
+        
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Rakefile中のnew_post taskでデフォルトのtitleを設定している箇所を</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># args.with_defaults(:title =&gt; &#39;new-post&#39;)</span>
+</span><span class='line'><span class="n">args</span><span class="o">.</span><span class="n">with_defaults</span><span class="p">(</span><span class="ss">:title</span> <span class="o">=&gt;</span> <span class="ss">Digest</span><span class="p">:</span><span class="ss">:SHA1</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(</span><span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="o">.</span><span class="n">to_s</span><span class="p">)</span><span class="o">[</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">7</span><span class="o">]</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>こんな感じで変更。SHA1を使っているので適当に頭のほうに</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;digest/sha1&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>も加えておく。
+これで</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="err">$</span> <span class="n">rake</span> <span class="n">new_post</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>で、その都度適当なタイトルが生成されるので同じ日付でも二つ以上の記事をさくっと書ける。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-09T17:35:00+09:00" pubdate data-updated="true">Jun 9<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lassie116.github.com/test/blog/2012/06/09/f0710d21/" data-via="" data-counturl="http://lassie116.github.com/test/blog/2012/06/09/f0710d21/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/test/blog/2012/06/09/" title="Previous Post: 無理矢理タイトルなくしたらURLが変になったがこれは大丈夫なのか">&laquo; 無理矢理タイトルなくしたらURLが変になったがこれは大丈夫なのか</a>
+      
+      
+        <a class="basic-alignment right" href="/test/blog/2012/06/09/266f78be/" title="Next Post: ちょっとタイトルが大きすぎませんかね">ちょっとタイトルが大きすぎませんかね &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section class="first odd">
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/test/blog/2013/02/20/d63c504d/">やらかした</a>
+      </li>
+    
+      <li class="post">
+        <a href="/test/blog/2013/02/19/93f59760/">TEST</a>
+      </li>
+    
+      <li class="post">
+        <a href="/test/blog/2012/06/10/f5e3e13b/">Octopress導入への道</a>
+      </li>
+    
+      <li class="post">
+        <a href="/test/blog/2012/06/09/12b7be82/">archivesへのリンクが変だったので直した</a>
+      </li>
+    
+      <li class="post">
+        <a href="/test/blog/2012/06/09/266f78be/">ちょっとタイトルが大きすぎませんかね</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Your Name -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a> and <a href="https://github.com/gluttony/object-octopress-theme">Object</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

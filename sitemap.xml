@@ -1,11 +1,43 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://lassie116.github.com/test/blog/2012/06/09/new-post/</loc>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lassie116.github.com/test/blog/2012/06/09/</loc>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lassie116.github.com/test/blog/2012/06/09/f0710d21/</loc>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lassie116.github.com/test/blog/2012/06/09/266f78be/</loc>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lassie116.github.com/test/blog/2012/06/09/12b7be82/</loc>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lassie116.github.com/test/blog/2012/06/10/f5e3e13b/</loc>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lassie116.github.com/test/blog/2013/02/19/93f59760/</loc>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
+    </url>
+    <url>
+        <loc>http://lassie116.github.com/test/blog/2013/02/20/d63c504d/</loc>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
+    </url>
+    <url>
         <loc>http://lassie116.github.com/test/blog/archives/</loc>
-        <lastmod>2013-02-20T01:53:25+09:00</lastmod>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
     </url>
     <url>
         <loc>http://lassie116.github.com/test/</loc>
-        <lastmod>2013-02-20T01:53:25+09:00</lastmod>
+        <lastmod>2013-02-20T02:20:33+09:00</lastmod>
     </url>
 </urlset>

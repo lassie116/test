@@ -5,16 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Blog Archive - My Octopress Blog</title>
+  <title>archivesへのリンクが変だったので直した - My Octopress Blog</title>
   <meta name="author" content="Your Name">
 
   
-  <meta name="description" content="Blog Archive 2013 やらかした
-Feb 20 2013 TEST
-Feb 19 2013 2012 Octopress導入への道
-Jun 10 2012 archivesへのリンクが変だったので直した
-Jun 09 2012 ちょっとタイトルが大きすぎませんかね
-Jun 09 &hellip;">
+  <meta name="description" content="プロジェクトページなgithub pagesだったからかもしれないが、archivesの場所が/blog/blog/archivesみたいに格好悪いことになっていたので修正した。 source/blog/blog/archiveという謎の階層にarchives生成用のファイルができていたので、 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -23,7 +18,7 @@ Jun 09 &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://lassie116.github.com/test/blog/archives/">
+  <link rel="canonical" href="http://lassie116.github.com/test/blog/2012/06/09/12b7be82/">
   <link href="/test/favicon.png" rel="icon">
   <link href="/test/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/test/javascripts/modernizr-2.0.js"></script>
@@ -71,104 +66,97 @@ Jun 09 &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Blog Archive</h1>
+    
+      <h1 class="entry-title">Archivesへのリンクが変だったので直した</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-09T19:05:00+09:00" pubdate data-updated="true">Jun 9<span>th</span>, 2012</time>
+        
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives">
 
 
+<div class="entry-content"><p>プロジェクトページなgithub pagesだったからかもしれないが、archivesの場所が/blog/blog/archivesみたいに格好悪いことになっていたので修正した。</p>
 
-  
-  <h2>2013</h2>
+<p>source/blog/blog/archiveという謎の階層にarchives生成用のファイルができていたので、これをsource/blogに移動させて適当にgit grep archives  とかしてリンクが/blog/blog/archivesになってそうなところを修正。あと_config.yamlの中のパーマネントリンクから余計なblog/を削除。</p>
 
-<article>
-  
-<h1><a href="/test/blog/2013/02/20/d63c504d/">やらかした</a></h1>
-<time datetime="2013-02-20T01:05:00+09:00" pubdate><span class='month'>Feb</span> <span class='day'>20</span> <span class='year'>2013</span></time>
+<p>わかりゃあ簡単だけど</p>
 
-
-</article>
-
+<ol>
+<li>octopressが初期化時に必要なファイルをsourceディレクトリに全部ぶっこむ</li>
+<li>generate時にはJekyllがsourceディクトリの中身を指定されたディレクトリ(public/blog)にマッピングする</li>
+</ol>
 
 
-<article>
-  
-<h1><a href="/test/blog/2013/02/19/93f59760/">TEST</a></h1>
-<time datetime="2013-02-19T23:39:00+09:00" pubdate><span class='month'>Feb</span> <span class='day'>19</span> <span class='year'>2013</span></time>
+<p>という流れを理解してないとはまる。</p>
 
+<p>つまり、設定ファイルだけをいじっても、octopressの初期化時の想定と整合性がとれなくなるとエラーがでて解決できない。処理が二段階であることを理解して、設定ファイルをいじった上でその変更と不整合をおこすディレクトリ構造は手で直す必要があった。正直めんどい。</p>
 
-</article>
-
-
-
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/test/blog/2012/06/10/f5e3e13b/">Octopress導入への道</a></h1>
-<time datetime="2012-06-10T02:16:00+09:00" pubdate><span class='month'>Jun</span> <span class='day'>10</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/test/blog/2012/06/09/12b7be82/">archivesへのリンクが変だったので直した</a></h1>
-<time datetime="2012-06-09T19:05:00+09:00" pubdate><span class='month'>Jun</span> <span class='day'>09</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/test/blog/2012/06/09/266f78be/">ちょっとタイトルが大きすぎませんかね</a></h1>
-<time datetime="2012-06-09T17:59:00+09:00" pubdate><span class='month'>Jun</span> <span class='day'>09</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/test/blog/2012/06/09/f0710d21/">タイトルを指定しなくてもURLのtitle部分を適当に生成してくれるようにRakefileを変更</a></h1>
-<time datetime="2012-06-09T17:35:00+09:00" pubdate><span class='month'>Jun</span> <span class='day'>09</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/test/blog/2012/06/09/">無理矢理タイトルなくしたらURLが変になったがこれは大丈夫なのか</a></h1>
-<time datetime="2012-06-09T15:58:00+09:00" pubdate><span class='month'>Jun</span> <span class='day'>09</span> <span class='year'>2012</span></time>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/test/blog/2012/06/09/new-post/">初めての記事</a></h1>
-<time datetime="2012-06-09T15:53:00+09:00" pubdate><span class='month'>Jun</span> <span class='day'>09</span> <span class='year'>2012</span></time>
-
-
-</article>
-
+<p>octopressには一括して設定ファイルもディレクトリ構造も管理してくれるメンテナンスツールが必要だ。</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-09T19:05:00+09:00" pubdate data-updated="true">Jun 9<span>th</span>, 2012</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://lassie116.github.com/test/blog/2012/06/09/12b7be82/" data-via="" data-counturl="http://lassie116.github.com/test/blog/2012/06/09/12b7be82/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/test/blog/2012/06/09/266f78be/" title="Previous Post: ちょっとタイトルが大きすぎませんかね">&laquo; ちょっとタイトルが大きすぎませんかね</a>
+      
+      
+        <a class="basic-alignment right" href="/test/blog/2012/06/10/f5e3e13b/" title="Next Post: Octopress導入への道">Octopress導入への道 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
 </div>
